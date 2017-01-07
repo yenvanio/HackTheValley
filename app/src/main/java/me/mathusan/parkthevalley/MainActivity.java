@@ -15,12 +15,37 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         OnMapReadyCallback,
         GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks,
-        LocationListener{
+        LocationListener {
+
+
+    /**
+     * Class members
+    */
+
+    private GoogleMap mMap;
+    private UiSettings mUiSettings;
+    private static String CLASS_NAME = "MAIN ACTIVITY";
+
+    /**
+     * Connection members
+     */
+    private GoogleApiClient mGoogleAPIClient;
+    private LocationRequest locationRequest;
 
 
     @Override
@@ -181,6 +206,21 @@ public class MainActivity extends AppCompatActivity
     public void onLocationChanged(Location location) {
         Log.d(CLASS_NAME, "location Changed " + location.toString());
     }
+/*
+    @Override
+    public void onStatusChanged(String s, int i, Bundle bundle) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String s) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String s) {
+
+    }*/
 
     private void askForPermission(){
         // if (ContextCompat.checkSelfPermission(this, Manifest.permission.))
@@ -195,4 +235,5 @@ public class MainActivity extends AppCompatActivity
                     1);
         }
     }
+
 }

@@ -3,6 +3,15 @@
 
     <item
         is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-10.0.1_23fe40c64e04fa8db1fecbd37dbfcd0d42bbeb7c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Dan\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.0\support-annotations-24.1.0.jar"
         jumboMode="true"
         optimize="true"
@@ -12,12 +21,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.0\jars\classes.jar"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.firebase\firebase-config\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="ba8e8860f7e033c3a503b682337a4bafdf56e6ee">
-        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.1.0_cae98ceb40bf027c0fe55d47d298f9bec7847026\classes.dex" />
+        sha1="ffc15e965a9e8c28f24455eedd4cac215c45d1fc">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-config-10.0.1_85dfb56824a8c56373e535c28782bfc7db84b9cb\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -30,12 +39,480 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-10.0.1_1505bc312d66521f084aeafbb42d6da704c1eb0f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="8c854b30eca6c442fe842e66cd3b58c5dd08996f">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.1.0_cc4ddf8e0564ad9b4a16c2ee0905f1d225034c36\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-10.0.1_cbe68d2a66de9133da7fc6b316d426d2d54a6bf7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.firebase\firebase-crash\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-crash-10.0.1_0fb7e141bd1c9e796d40a2e042653bbd617e43aa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\design\24.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="8620c018c108eed501bbdb85324b79136373ea44">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.1.0_710a41545d41fb66a69b77a78280f38f1fe18f78\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gass-10.0.1_59dd14731e5c80c6d518574ca817c84d1c57c691\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="1d193729baf37df3d902a423291423a0df7e3779">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-clearcut-10.0.1_5295cb9b7f19e3945eb369a69dd8fedebfec5152\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.0.1_72e79294698234057758f634ceb6a9e2881af690\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-awareness\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="4385ccc0a88b33d182a836eadb47be55c8eb1107">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-awareness-10.0.1_ba7bd4accc24bb57a738befe26f8f2ab88baa757\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-10.0.1_13b8c1af3b5183da573334d93040c91350300f94\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-lite-10.0.1_ad13b8499bfc5184fd2fc3f78878cf91ed342f8c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="1e11c68fec92a17c84dd8d1dd80e74c4e67b12e2">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-10.0.1_42bc2d836792e2493cbe8172ff8c034d3a53378f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="4c829ff0ccfecb28a999ee46d9e75948dfc777a4">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-10.0.1_ede5e318f145b9d4f5935d79c778c41a596474d1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-10.0.1_191fe5f1d10f952c67e9f394d6d7c3c3e119b273\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.firebase\firebase-appindexing\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-appindexing-10.0.1_06c9d4811821dfe5381792c06fd05019994d49e6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="771267c5b0c7a5b348d3205dcfa1f871af7e0177">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-10.0.1_cf45f8b5ac96418e9b14cd9e849bc8a5826c33b0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="2d5d113b0352ab60946fc44c518cf68fd26cbb79">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wallet-10.0.1_cd58a268a161da315da600012cf27410f9607601\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-10.0.1_892bee5fbb40c04fd292fc7f3b3b2e8f370de559\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-10.0.1_1b428c2289a537545c375579469b50ec78c89a53\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="028f8255cb977b29cdffbfcf05caa0459686120c">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-drive-10.0.1_2f09cf249def4abffa04c8bea7bd90953957bc80\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="9351cbd5457c1604aedddfc56fec31c7506f6d3b">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8e0c16578b8f3ffa662a9f25cbb715d2f1ac1203\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-instantapps\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="45305e6af414dab5aba6c3225081c2f15c3bdd1e">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-instantapps-10.0.1_794e3a113d19b1aaa85903ce223e36d7da3c33e4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.0.1_491fd3c38fabfbad688aca52eca1acf55419003e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="971509bbe30bb7b971fc1c49d7b23d0d818830ac">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-10.0.1_053a0f65b6f8dab59a9995744ed7387810258d18\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="ba6aa5e69ef31dee57208125323cee958fc67565">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-10.0.1_48510929d2c72de858521686414313285bccab07\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="408a599ac77cd17fe8e8919326bec617b3d005bd">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wearable-10.0.1_837a5a3c430b7246f46b73470ecfaa63a0d0c0bd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-places\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-places-10.0.1_3a5f08515e09a0670f14e768ce09318842f0b4ff\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.0\jars\libs\internal_impl-24.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="8308a1302a74d133aa5fc9f2138cabcefc8ae5d7">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.0_e9f6195611ff4e4dbcec0e17ec9cab055ae3c1c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast-framework\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="df1cb17511aabbb63264a0024949d1e42502a512">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-framework-10.0.1_575982aa22d5455c49a92d90927842a06ae6b6f4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-connection-10.0.1_2234af76e54bf2019f140ad68d741a45bae386cc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="c6e1f361e9d61aece9dac39b77fcc98a337a144d">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-nearby-10.0.1_1219403e4ab191a942682744e72c03fba1655bd7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_37dca3e12f647b41b84fbe45dea294200a5cc636\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-10.0.1_eeaeaf69aaf1f1b3e83a15377ee17078b708e87b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_989bb57d4444b6945e6eb4797cd4fefc8b8ead97\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics-impl\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="e871881b36b32e6bfd271a830c6eeb54ff0fc185">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-impl-10.0.1_3ce3c407a95e23672961e129a46c94c9f3400eb0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="88a866e6093ab06714f7f79439a9a703c5b1fd71">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v13-24.1.0_c37e85473f23d68b2d37de000e49dd00e660e193\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
         sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
         <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_b947e3c2fe0175285fafdf59a5534fd4eebb775f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="f6cf557be4dbd0282ea2388633e5378634423226">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-10.0.1_d3ef15329993a5d4fc57e15b39be0a1e8f14ddc1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-api\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="b1df8fa3d372a27e4e969ce00b00689ee1eed031">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-api-10.0.1_70b4ad73f6b877145c2e0055189aad441ef31cd9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-v4-impl\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="f23ad0f8e58713ff4b55f61c0bbde3830378347c">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-v4-impl-10.0.1_c5d169547bba6bf4247db9b8d0633dd73a475cf3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.0\jars\libs\internal_impl-24.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="8c7087216946c546f85a1242a2794c0f271e092c">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.0_1b7a6d8147bd0fddb4655523cebb1cc0c18d0ec0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="9f98a7bacafdace35d9b469fb15d0b42d453480a">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2a39cc9c8636c04c2db0a48256e46f76763a9450\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-10.0.1_0cd035b99ac6349131ed65a0eb8841720788d598\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="e096a5d8343cc9c5a9f6eded36bd0f4c82f8c83e">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.1.0_bf133715baabb8ed31df85bfd909a0949157f27b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="ba8e8860f7e033c3a503b682337a4bafdf56e6ee">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.1.0_cae98ceb40bf027c0fe55d47d298f9bec7847026\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-10.0.1_af1fc56d03c1dafbdc72be46208d727ae47119d7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="8308ed003522a2ee8958311afcc4cfd0470377cd">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-10.0.1_699e3b530289d3ff4ec4ea50f1ae775db671efa8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.0.1_df1d96ac8184b0e70632b64ee4cbf14365ef9717\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-24.0.0_07f44deb684d266dc0c0ceba1743973707e9864d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="92c871a22463a247e8a77a9f3fd231c278788c4a">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-10.0.1_123d36fe6f476f8a74620fa254394774110e7d4f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="7a64bf6dc775198eed9db9468a133adf7dfe6562">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-10.0.1_e4f3abc18ae8513afb687551e7f87d74f6869f0e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.0.1_056f68091f2187d52c95b6d39ac1d301a5011b7c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="a48dc0b148059764d32500be558702d5ff932058">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-identity-10.0.1_9c68d562b4fb2db1e7d9b6829e4122405a5ce188\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -57,75 +534,39 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\jars\classes.jar"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
-        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-10.0.1_1505bc312d66521f084aeafbb42d6da704c1eb0f\classes.dex" />
+        sha1="39907d5c8f5902fffef30160ca7447c93b82405c">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appinvite-10.0.1_9881e1e06f800500282339cb0d8b57fe5bb8671a\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.0\jars\libs\internal_impl-24.1.0.jar"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="8c7087216946c546f85a1242a2794c0f271e092c">
-        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.0_1b7a6d8147bd0fddb4655523cebb1cc0c18d0ec0\classes.dex" />
+        sha1="6bb5d347ebc0c6ef3c83a905222a688da5d2f7b4">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-iid-10.0.1_e196622834c35a5906647eaddc68e5811bd47134\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.0\jars\classes.jar"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\palette-v7\24.0.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="8c854b30eca6c442fe842e66cd3b58c5dd08996f">
-        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.1.0_cc4ddf8e0564ad9b4a16c2ee0905f1d225034c36\classes.dex" />
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-palette-v7-24.0.0_82c216b3f2545d0c036e99ee1b154c7c9a95d94c\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
+        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_37dca3e12f647b41b84fbe45dea294200a5cc636\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\design\24.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="8620c018c108eed501bbdb85324b79136373ea44">
-        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.1.0_710a41545d41fb66a69b77a78280f38f1fe18f78\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="c0ce97fd72a69bd533039a3a53fc37ac51d96b26">
-        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2a39cc9c8636c04c2db0a48256e46f76763a9450\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="e096a5d8343cc9c5a9f6eded36bd0f4c82f8c83e">
-        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.1.0_bf133715baabb8ed31df85bfd909a0949157f27b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Dan\HackTheValley\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="575aa35e6014b8e781e4b427369ff6bf1dcf42b5">
-        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8e0c16578b8f3ffa662a9f25cbb715d2f1ac1203\classes.dex" />
+        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
+        <dex dex="C:\Users\Dan\HackTheValley\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-10.0.1_580d3f0f46aad0792ae9a1c69b8d5489eed0ceb5\classes.dex" />
     </item>
 
 </items>

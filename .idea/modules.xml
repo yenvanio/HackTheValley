@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file:///Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/app.iml" filepath="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/app.iml" />
-      <module fileurl="file:///Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/trunk.iml" filepath="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/trunk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HackTheValley.iml" filepath="$PROJECT_DIR$/HackTheValley.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "274134669153",
+    "project_id": "firebase-parkthevalley"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274134669153:android:b36e6c4b37730829",
+        "android_client_info": {
+          "package_name": "me.mathusan.parkthevalley"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "274134669153-ojsp8tjko2246mi2jcel23kobkeg65rb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "me.mathusan.parkthevalley",
+            "certificate_hash": "4C88EFE2705B88E0D42C15624A8A9E0D53D2DB76"
+          }
+        },
+        {
+          "client_id": "274134669153-l1ks3p2f0f9ht4lj76ah60uoruh968hg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNvsXBjSnLvA5KWCiDMmsiVp5JcP362_Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

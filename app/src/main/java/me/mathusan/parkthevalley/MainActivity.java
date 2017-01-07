@@ -1,5 +1,7 @@
 package me.mathusan.parkthevalley;
 
+import android.content.Intent;
+import android.graphics.Camera;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,10 +18,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -135,6 +143,28 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    private void startSearchingSpots(){
+        PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+        try{
+            startActivityForResult(builder.build(this), PLACE_PICKER_REQUEST);
+        }catch(GooglePlayServicesNotAvailableException e){
+            e.printStackTrace();
+        }catch(GooglePlayServicesRepairableException e){
+            e.printStackTrace();
+        }
+    }
+    private static final int PLACE_PICKER_REQUEST = 1;
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(requestCode == PLACE_PICKER_REQUEST){
+            if(resultCode == RESULT_OK){
+                Place place = PlacePicker.getPlace(this, data);
+                Log.d("MainActivity", "onActivityResult()");
+                changeCamera(CameraUpdateFactory.newLatLngZoom(place.getLatLng(), 14));
+            }
+        }
+    }
+
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
@@ -166,6 +196,19 @@ public class MainActivity extends AppCompatActivity
         }catch(SecurityException e){
             Log.e(CLASS_NAME, e.getMessage());
         }
+    }
+
+    /**
+     * MAP CONTROLS
+     */
+
+    private void changeCamera(CameraUpdate update) {
+        changeCamera(update, null);
+    }
+
+
+    private void changeCamera(CameraUpdate update, GoogleMap.CancelableCallback callback) {
+        mMap.animateCamera(update);
     }
 
     @Override

@@ -1,5 +1,7 @@
 package me.mathusan.parkthevalley;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -8,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -21,10 +24,13 @@ import android.widget.Toast;
 import com.firebase.client.Config;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -246,6 +252,16 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_signout) {
 
+        }
+          else if (id == R.id.nav_profile) {
+            MyListings frag = new MyListings();
+
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.content_main,frag).addToBackStack("");
+            ft.commit();
+
+            //manager.beginTransaction().replace(R.id.mylistings_fragment, frag, frag.getTag()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -1,107 +1,109 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:autofit="http://schemas.android.com/tools"
+    android:id="@+id/cv"
+    card_view:cardUseCompatPadding="true">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center">
+        android:layout_height="187dp"
+        android:padding="16dp"
+        android:weightSum="4"
+        >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="3"
-            android:orientation="vertical">
 
-            <TextView
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Title"
-                android:id="@+id/title"
-            android:textSize="30sp"
-            android:textAlignment="center"
+            android:id="@+id/title"
+            android:text="LatLng"
+            android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:layout_gravity="center_horizontal"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Distance"
-                android:id="@+id/distance"
-                android:textSize="25sp"
-                android:textAlignment="center"
-                android:layout_alignParentTop="true"
-                android:layout_gravity="center_horizontal"/>
-
-            <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:id="@+id/phoneIcon"
-                    android:src ="@drawable/ic_phone_black_24dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Phone #"
-                    android:id="@+id/phone"
-                    android:textSize="20sp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:id="@+id/moneyIcon"
-                    android:src ="@drawable/ic_attach_money_black_24dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Price"
-                    android:id="@+id/money"
-                    android:textSize="20sp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Name"
-                    android:textSize="20sp"
-                    android:id="@+id/name"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:id="@+id/nameIcon"
-                    android:layout_height="20dp"
-                    android:src ="@drawable/ic_account_circle_black_24dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginRight="46dp"
-                    android:layout_marginEnd="46dp" />
-            </RelativeLayout>
+            android:textSize="30sp"
+            android:singleLine="true"
+            autofit:minTextSize="20sp"
+            />
 
 
-        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/phone"
+            android:text="12 hours"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
 
-    </android.support.v7.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:text="nameandshit"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/price"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"/>
 
-</LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/price"
+            android:gravity="center_vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Monterrey, MX"
+            android:layout_below="@+id/phone" />
+
+
+        <ImageView
+        android:id="@+id/phoneIcon"
+        android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:tint="@color/colorPrimary"
+            android:src="@drawable/ic_phone_black_24dp"
+            android:layout_alignBottom="@+id/phone"
+            android:layout_toLeftOf="@+id/phone"
+            android:layout_toStartOf="@+id/phone" />
+
+
+
+        <ImageView
+            android:id="@+id/nameIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:tint="@color/colorPrimary"
+            android:src="@drawable/ic_account_circle_black_24dp"
+            android:layout_alignTop="@+id/name"
+            android:layout_toLeftOf="@+id/name"
+            android:layout_toStartOf="@+id/name" />
+
+
+        <ImageView
+            android:id="@+id/priceIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:tint="@color/colorPrimary"
+            android:src="@drawable/ic_attach_money_black_24dp"
+            android:layout_alignBottom="@+id/price"
+            android:layout_toLeftOf="@+id/price"
+            android:layout_toStartOf="@+id/price"
+             />
+
+        <Switch
+            android:id="@+id/toggle_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

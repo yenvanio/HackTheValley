@@ -17,8 +17,13 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
@@ -32,8 +37,10 @@ import com.google.firebase.database.GenericTypeIndicator;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -50,45 +57,55 @@ public class MyListings extends AppCompatActivity {
     private RecyclerView recyclerView;
     private CardAdapter adapter;
     private HashMap<User, String> userList;
-    private DatabaseReference database;
-    final public static String FIREBASE_URL = "https://fir-parkthevalley.firebaseio.com/";
+    private List<Spot> spotList;
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.mylistings_fragment);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-            recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+
+
+
 
             userList = new HashMap<>();
 
             userList = readUserList();
+        String key;
+
+            User user = null;
+            for(User u : userList.keySet()){
+                spotList = u.getSpots();
+                user = u;
+
+            }
+        key = userList.get(user);
             Set<User> keySet = userList.keySet();
 
-            adapter = new CardAdapter(this, new ArrayList<>(keySet));
 
-//            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
-            RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
-            recyclerView.setLayoutManager(mLayoutManager);
+    adapter = new CardAdapter(this, spotList, user.getName(), user.getPhone(), user.getPrice(), user, key);
+
+            LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+            layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+
+            recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
             recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
             recyclerView.setItemAnimator(new DefaultItemAnimator());
-            recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
 
             prepareCards();
         }
 
 
-    /**
-     * Adding few albums for testing
-     */
     private void prepareCards() {
         adapter.notifyDataSetChanged();
     }
 
-    /**
-     * RecyclerView item decoration - give equal margin around grid item
-     */
     public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
         private int spanCount;
@@ -124,14 +141,32 @@ public class MyListings extends AppCompatActivity {
         }
     }
 
-    /**
-     * Converting dp to pixel
-     */
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     private HashMap<User, String> readUserList(){
         try{
@@ -147,7 +182,6 @@ public class MyListings extends AppCompatActivity {
         }
         return userList;
     }
-
 
 
     }

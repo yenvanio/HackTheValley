@@ -122,13 +122,11 @@ public class MainActivity extends AppCompatActivity
 
         Bundle b = getIntent().getExtras();
         if(b != null){
-            name = b.getString("name");
-            email = b.getString("email");
 
             user = new User();
             user.setName(name);
             user.setEmail(email);
-            user.setPhone("--- --- ----");
+            user.setPhone("647-470-1413");
         }
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()

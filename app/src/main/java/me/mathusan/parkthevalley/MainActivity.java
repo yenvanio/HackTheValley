@@ -3,6 +3,9 @@ package me.mathusan.parkthevalley;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -11,6 +14,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -23,13 +27,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -52,6 +61,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -100,6 +112,8 @@ public class MainActivity extends AppCompatActivity
     private DatabaseReference database;
     final public static String FIREBASE_URL = "https://fir-parkthevalley.firebaseio.com/";
 
+    TextView nameH=null, emailH=null;
+
     /**
      * User member
      */
@@ -136,6 +150,7 @@ public class MainActivity extends AppCompatActivity
             askForNumber();
         }
 
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
@@ -149,6 +164,13 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        View nav_view = getLayoutInflater().inflate(R.layout.nav_header_main, null);
+        nameH = (TextView) nav_view.findViewById(R.id.navheader_name);
+        emailH = (TextView) nav_view.findViewById(R.id.navheader_email);
+        nameH.setText(user.getName());
+        emailH.setText(user.getEmail());
+        
+          mapFragment.getMapAsync(this);
 
         mapFragment.getMapAsync(this);
 
@@ -162,6 +184,10 @@ public class MainActivity extends AppCompatActivity
         //writeNewPost(user);
 
     }
+
+    public Activity getInstance() {return this;}
+
+    public HashMap<User, String> getUserListHashMap () {return userListHashMap;}
 
     private void askForNumber() {
         onCreateDialog();
@@ -209,7 +235,7 @@ public class MainActivity extends AppCompatActivity
 
         // remove existing databasereference
         {
-            if (userListHashMap.containsKey(user)) {
+            if(userListHashMap.containsKey(user)){
                 database.child(userListHashMap.get(user));
                 database.getRef().removeValue();
                 userListHashMap.remove(user);
@@ -239,7 +265,7 @@ public class MainActivity extends AppCompatActivity
                             .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_xs)));
                 }
                 Log.d(CLASS_NAME, "user email is " + user.getEmail());
-
+                saveUserList();
             }
 
             @Override
@@ -251,7 +277,17 @@ public class MainActivity extends AppCompatActivity
 //        database.child(user.getEmail()).setValue(user);
     }
 
-    private void readPost(User user) {
+    private void saveUserList(){
+        try{
+            FileOutputStream fileOutputStream = openFileOutput("userList", MODE_PRIVATE);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            Log.d(CLASS_NAME, "size of object " + objectOutputStream.toString());
+            objectOutputStream.writeObject(userListHashMap);
+            objectOutputStream.flush();
+            objectOutputStream.close();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
 
@@ -305,6 +341,18 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_signout) {
 
+        }
+          else if (id == R.id.nav_profile) {
+            Intent i = new Intent(this, MyListings.class);
+            startActivity(i);
+//            MyListings frag = new MyListings();
+//
+//            FragmentManager fm = getFragmentManager();
+//            FragmentTransaction ft = fm.beginTransaction();
+//            ft.replace(R.id.content_main,frag).addToBackStack("");
+//            ft.commit();
+
+//            manager.beginTransaction().replace(R.id.mylistings_fragment, frag, frag.getTag()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

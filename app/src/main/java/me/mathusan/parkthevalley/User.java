@@ -104,9 +104,11 @@ public class User  implements Serializable {
     @Override
     public boolean equals(Object obj){
         if( !(obj instanceof User)) return false;
-        if( ((User) obj).getName().equals(name)
-                && ((User) obj).getPhone().equals(phone)
-                && ((User) obj).getEmail().equals(email)){
+
+        User u = (User) obj;
+        if(u.getEmail().equals(email)
+                &&
+                u.getName().equals(name)){
             return true;
         }
         return false;

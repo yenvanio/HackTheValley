@@ -12,12 +12,11 @@
 
 
     <Button
-        android:id="@+id/openMapFrag_button"
+        android:id="@+id/refreshMapButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Open Map Fragment"
-        android:gravity="bottom"
-        android:visibility="invisible"/>
+        android:text="Refresh"
+        android:gravity="bottom"/>
 
     <fragment
         android:id="@+id/map"

@@ -139,7 +139,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             handleSignInResult(result);
         }
         else{
-            Toast.makeText(getApplicationContext(), "Google Authentication Failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Google Authentication", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -178,7 +178,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithCredential", task.getException());
-                            Toast.makeText(LoginActivity.this, "Firebase Authentication failed.",
+                            Toast.makeText(LoginActivity.this, "Firebase Authentication.",
                                     Toast.LENGTH_SHORT).show();
                         }
                         // ...
@@ -219,6 +219,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     public void onConnectionFailed(ConnectionResult connectionResult) {
         // An unresolvable error has occurred and Google APIs (including Sign-In) will not
         // be available.
-        Log.d(TAG, "onConnectionFailed:" + connectionResult);
+        //Log.d(TAG, "onConnectionFailed:" + connectionResult);
     }
     }

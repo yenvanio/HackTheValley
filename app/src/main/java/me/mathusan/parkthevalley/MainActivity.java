@@ -224,49 +224,53 @@ public class MainActivity extends AppCompatActivity
 
         Firebase.setAndroidContext(this);
 
-        Firebase firebase = new Firebase(FIREBASE_URL);
+        //Firebase firebase = new Firebase(FIREBASE_URL);
 
         // remove existing databasereference
         {
-            if(userListHashMap.containsKey(user.getEmail())){
+            if(userListHashMap.containsKey(user)){
                 database.child(userListHashMap.get(user));
                 database.getRef().setValue(user);
                 userListHashMap.remove(user);
 
-
-
                 Log.d(CLASS_NAME, "removed value");
+            }
+            else {
+                // Generate a new push ID for the new post
+
+                final DatabaseReference newPostRef = database.push();
+                newPostRef.setValue(user);
+                userListHashMap.put(user, newPostRef.getKey());
+
+                newPostRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.getValue() == null) return;
+                        User user = dataSnapshot.getValue(User.class);
+                        mMap.clear();
+                        for (Spot s : user.getSpots()) {
+                            selectedMarker = mMap.addMarker(new MarkerOptions()
+                                    .position(new LatLng(s.getLat(), s.getLng()))
+                                    .title("Price: " + String.valueOf(user.getPrice()))
+//                            .title("Available: " + s.getOpen())
+                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_xs)));
+                        }
+                        Log.d(CLASS_NAME, "user email is " + user.getEmail());
+                        saveUserList();
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.w(CLASS_NAME, "Failed to read value");
+                    }
+                });
             }
         }
 
-// Generate a new push ID for the new post
-        final DatabaseReference newPostRef = database.push();
-        newPostRef.setValue(user);
-        userListHashMap.put(user, newPostRef.getKey());
 
 
-        newPostRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getValue() == null) return;
-                User user = dataSnapshot.getValue(User.class);
-                mMap.clear();
-                for (Spot s : user.getSpots()) {
-                    selectedMarker = mMap.addMarker(new MarkerOptions()
-                            .position(new LatLng(s.getLat(), s.getLng()))
-                            .title("Price: " + String.valueOf(user.getPrice()))
-//                            .title("Available: " + s.getOpen())
-                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_xs)));
-                }
-                Log.d(CLASS_NAME, "user email is " + user.getEmail());
-                saveUserList();
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.w(CLASS_NAME, "Failed to read value");
-            }
-        });
+
+
 
     }
 
@@ -334,9 +338,11 @@ public class MainActivity extends AppCompatActivity
             startPlacePicker();
 
         } else if (id == R.id.nav_signout) {
+            state = STATE.NORMAL;
 
         }
           else if (id == R.id.nav_profile) {
+            state = STATE.NORMAL;
             Intent i = new Intent(this, MyListings.class);
             startActivity(i);
 //            MyListings frag = new MyListings();
@@ -386,14 +392,12 @@ public class MainActivity extends AppCompatActivity
                     selectedMarker = mMap.addMarker(new MarkerOptions()
                             .position(place.getLatLng())
                             .title((String) place.getAddress())
-                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.hackvalleylogo)));
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_xs)));
 
 //                    addMarkerToUser();
 
                     List<Spot> tempCollection = user.getSpots() == null ? new ArrayList<Spot>() : user.getSpots();
-                    Log.d(CLASS_NAME, "Spot is null? : " + (spot == null));
                     tempCollection.add(spot);
-                    Log.d(CLASS_NAME, "tempCollection is null? : " + (tempCollection.size() == 0));
                     user.setSpots(tempCollection);
 
                     writeNewPost(user);

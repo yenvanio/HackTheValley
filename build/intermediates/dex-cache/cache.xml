@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="d16e987ad37df9f18ed4a3c16f6f3c6c95b681a6">
+        sha1="504ce932539e48dad2a24e1e5ed19d76da40fcfb">
         <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_66fe18f9c3389a000ff2c2ecf3a9125f8b82537c/classes.dex" />
     </item>
     <item
@@ -102,6 +102,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a819aae4f0c711e50b4fd633922a3c1a176cb51e">
+        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.0.0_0013ab566374f6cc458f7d5c407d5ff65d0ba683/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -169,7 +178,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="9e4ed8b9fa6acb86c9ab5caa1f18cfc9d4bbd8f9">
+        sha1="2ec1f93e9e7684395f0cad962b107cbca06009da">
         <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_507088f89abb3d0f310f15822f3137672cc7b3cd/classes.dex" />
     </item>
     <item

@@ -1,5 +1,8 @@
 package me.mathusan.parkthevalley;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -14,13 +17,14 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.Toast;
 
-import com.firebase.client.Config;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
@@ -36,46 +40,55 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         OnMapReadyCallback,
         GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks,
-        LocationListener
-{
+        LocationListener {
 
 
-    enum STATE{
+    enum STATE {
         ADDING,
         SEARCHING,
+        MODIFYING,
         NORMAL // nothing
-}
+    }
+
     /**
      * Class members
-    */
+     */
 
-    private GoogleMap mMap;
     private UiSettings mUiSettings;
     private static String CLASS_NAME = "MAIN ACTIVITY";
     private STATE state;
 
     private String name, email;
-    private HashMap<String, String> userListHashMap;
+    private HashMap<User, String> userListHashMap;
+
+    /**
+     * Map Members
+     */
+
+    private GoogleMap mMap;
+    private Marker selectedMarker;
+    private Circle selectedCircle;
+    private Location lastKnownLocation;
 
     /**
      * Connection members
@@ -111,14 +124,14 @@ public class MainActivity extends AppCompatActivity
         createLocationRequest();
 
         Bundle b = getIntent().getExtras();
-        if(b != null){
+        if (b != null) {
             name = b.getString("name");
             email = b.getString("email");
 
             user = new User();
             user.setName(name);
             user.setEmail(email);
-            user.setPhone("--- --- ----");
+            askForNumber();
         }
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -134,11 +147,11 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        
-          mapFragment.getMapAsync(this);
+
+        mapFragment.getMapAsync(this);
 
         // Write a message to the database
-         database = FirebaseDatabase.getInstance().getReference();
+        database = FirebaseDatabase.getInstance().getReference();
 
 //        Spot spot = new Spot();
 //        spot.setLat(43.843295);
@@ -148,7 +161,38 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private void writeNewPost(final User user)  {
+    private void askForNumber() {
+        onCreateDialog();
+    }
+
+
+    private void onCreateDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        // Get the layout inflater
+        LayoutInflater inflater = getLayoutInflater();
+
+        // Inflate and set the layout for the dialog
+        // Pass null as the parent view because its going in the dialog layout
+        builder.setView(inflater.inflate(R.layout.dialogue_phone_number, null))
+                // Add action buttons
+                .setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        EditText number = (EditText) findViewById(R.id.phoneNumberPicker);
+                        if(number.getText() != null){
+                            user.setPhone(number.getText().toString());
+                        }
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        user.setPhone("--- --- ----");
+                    }
+                });
+        builder.show();
+    }
+
+    private void writeNewPost(final User user) {
 
         Log.d(CLASS_NAME, "WritingPost...");
 
@@ -161,9 +205,12 @@ public class MainActivity extends AppCompatActivity
 
         // remove existing databasereference
         {
-            if(userListHashMap.containsKey(user.getEmail())){
-                database.child(userListHashMap.get(user.getEmail()));
+            if (userListHashMap.containsKey(user)) {
+                database.child(userListHashMap.get(user));
                 database.getRef().removeValue();
+                userListHashMap.remove(user);
+
+
                 Log.d(CLASS_NAME, "removed value");
             }
         }
@@ -171,14 +218,22 @@ public class MainActivity extends AppCompatActivity
 // Generate a new push ID for the new post
         final DatabaseReference newPostRef = database.push();
         newPostRef.setValue(user);
-        userListHashMap.put(user.getEmail(), newPostRef.getKey());
+        userListHashMap.put(user, newPostRef.getKey());
+
 
         newPostRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot.getValue() == null) return;
+                if (dataSnapshot.getValue() == null) return;
                 User user = dataSnapshot.getValue(User.class);
-
+                mMap.clear();
+                for (Spot s : user.getSpots()) {
+                    selectedMarker = mMap.addMarker(new MarkerOptions()
+                            .position(new LatLng(s.getLat(), s.getLng()))
+                            .title(String.valueOf(user.getPrice()))
+//                            .title("Available: " + s.getOpen())
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_xs)));
+                }
                 Log.d(CLASS_NAME, "user email is " + user.getEmail());
 
             }
@@ -192,7 +247,7 @@ public class MainActivity extends AppCompatActivity
 //        database.child(user.getEmail()).setValue(user);
     }
 
-    private void readPost(User user){
+    private void readPost(User user) {
     }
 
 
@@ -254,7 +309,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     int PLACE_PICKER_REQUEST = 1;
-    private void startPlacePicker(){
+
+    private void startPlacePicker() {
 
         PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
 
@@ -275,11 +331,18 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
 
                 changeCamera(CameraUpdateFactory.newLatLngZoom(place.getLatLng(), 14));
-                if(state == STATE.ADDING){
+                if (state == STATE.ADDING) {
                     Spot spot = new Spot();
                     spot.setOpen(true);
                     spot.setLat(place.getLatLng().latitude);
                     spot.setLng(place.getLatLng().longitude);
+
+                    selectedMarker = mMap.addMarker(new MarkerOptions()
+                            .position(place.getLatLng())
+                            .title((String) place.getAddress())
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.hackvalleylogo)));
+
+//                    addMarkerToUser();
 
                     List<Spot> tempCollection = user.getSpots() == null ? new ArrayList<Spot>() : user.getSpots();
                     Log.d(CLASS_NAME, "Spot is null? : " + (spot == null));
@@ -293,7 +356,13 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private void changeCamera(CameraUpdate cameraUpdate){
+//    private void addMarkerToUser() {
+//        List<Marker> list = user.getMarkers() == null ? new ArrayList<Marker>() : user.getMarkers();
+//        list.add(selectedMarker);
+//        user.setMarkers(list);
+//    }
+
+    private void changeCamera(CameraUpdate cameraUpdate) {
         mMap.animateCamera(cameraUpdate);
     }
 
@@ -313,7 +382,7 @@ public class MainActivity extends AppCompatActivity
     public void onMapReady(GoogleMap googleMap) {
         Log.d(CLASS_NAME, "onMapReady");
         mMap = googleMap;
-        if(mMap != null){
+        if (mMap != null) {
             Log.d(CLASS_NAME, "map is not null");
         }
         askForPermission();
@@ -325,15 +394,34 @@ public class MainActivity extends AppCompatActivity
 
         try {
             mMap.setMyLocationEnabled(true);
-        }catch(SecurityException e){
+        } catch (SecurityException e) {
             Log.e(CLASS_NAME, e.getMessage());
         }
+
+        Log.d(CLASS_NAME, "lastKnownLocation is null " + (lastKnownLocation == null));
+
+        if(lastKnownLocation != null){
+            changeCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude()), 14));
+        }
+
     }
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         Log.d(CLASS_NAME, "onConnected");
         startLocationUpdates();
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            askForPermission();
+            return;
+        }
+        lastKnownLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleAPIClient);
     }
 
     private void connectGoogleAPI(){

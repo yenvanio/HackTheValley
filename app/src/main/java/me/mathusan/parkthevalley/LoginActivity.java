@@ -138,6 +138,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             handleSignInResult(result);
         }
+        else{
+            Toast.makeText(getApplicationContext(), "Google Authentication Failed", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void handleSignInResult(GoogleSignInResult result) {
@@ -175,7 +178,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithCredential", task.getException());
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                            Toast.makeText(LoginActivity.this, "Firebase Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
                         // ...

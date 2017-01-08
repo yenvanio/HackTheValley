@@ -1,5 +1,7 @@
 package me.mathusan.parkthevalley;
 
+import com.google.android.gms.maps.model.Marker;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class User {
     private String phone;
     private double price;
     private List<Spot> spots;
+//    private List<Marker> markers;
 
 
     public User() {
@@ -52,6 +55,14 @@ public class User {
     public void setSpots(List<Spot> spots) {
         this.spots = spots;
     }
+
+//    public List<Marker> getMarkers(){
+//        return markers;
+//    }
+//
+//    public void setMarkers(List<Marker> markers){
+//        this.markers = markers;
+//    }
 
     public String getName() {
         return name;

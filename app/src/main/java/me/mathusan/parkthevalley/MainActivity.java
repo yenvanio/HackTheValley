@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Toast;
@@ -131,6 +132,7 @@ public class MainActivity extends AppCompatActivity
             user = new User();
             user.setName(name);
             user.setEmail(email);
+            user.setPrice(2.5);
             askForNumber();
         }
 
@@ -173,14 +175,16 @@ public class MainActivity extends AppCompatActivity
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        builder.setView(inflater.inflate(R.layout.dialogue_phone_number, null))
+        final View dialogueView = inflater.inflate(R.layout.dialogue_phone_number, null);
                 // Add action buttons
-                .setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                builder.setView(dialogueView).setPositiveButton("Save", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        EditText number = (EditText) findViewById(R.id.phoneNumberPicker);
-                        if(number.getText() != null){
+                        EditText number = (EditText) dialogueView.findViewById(R.id.phoneNumberPicker);
+
+                        if(number != null && number.getText() != null){
                             user.setPhone(number.getText().toString());
+                            Toast.makeText(getApplicationContext(), "Phone number saved", Toast.LENGTH_SHORT).show();
                         }
                     }
                 })
@@ -230,7 +234,7 @@ public class MainActivity extends AppCompatActivity
                 for (Spot s : user.getSpots()) {
                     selectedMarker = mMap.addMarker(new MarkerOptions()
                             .position(new LatLng(s.getLat(), s.getLng()))
-                            .title(String.valueOf(user.getPrice()))
+                            .title("Price: " + String.valueOf(user.getPrice()))
 //                            .title("Available: " + s.getOpen())
                             .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_xs)));
                 }

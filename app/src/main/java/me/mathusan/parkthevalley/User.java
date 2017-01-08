@@ -1,5 +1,10 @@
 package me.mathusan.parkthevalley;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -7,7 +12,7 @@ import java.util.List;
  * Created by Mathu on 2017-01-07.
  */
 
-public class User {
+public class User  implements Serializable{
 
     private String email;
     private String name;
@@ -20,6 +25,26 @@ public class User {
       /*Blank default constructor essential for Firebase*/
     }
 
+
+    /*protected User(Parcel in) {
+        email = in.readString();
+        name = in.readString();
+        phone = in.readString();
+        price = in.readDouble();
+        spots = in.readList(spots, new SpotCreator());
+    }*/
+
+    /*public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };*/
 
     public String getEmail() {
         return email;
@@ -59,5 +84,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+
+
+
+    public class SpotCreator extends ClassLoader {
+
+
     }
 }

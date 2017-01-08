@@ -1,5 +1,6 @@
 package me.mathusan.parkthevalley;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
@@ -50,6 +51,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -81,7 +85,7 @@ public class MainActivity extends AppCompatActivity
     private STATE state;
 
     private String name, email;
-    private HashMap<String, String> userListHashMap;
+    private HashMap<User, String> userListHashMap;
 
     /**
      * Connection members
@@ -154,6 +158,10 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    public Activity getInstance() {return this;}
+
+    public HashMap<User, String> getUserListHashMap () {return userListHashMap;}
+
     private void writeNewPost(final User user)  {
 
         Log.d(CLASS_NAME, "WritingPost...");
@@ -167,8 +175,8 @@ public class MainActivity extends AppCompatActivity
 
         // remove existing databasereference
         {
-            if(userListHashMap.containsKey(user.getEmail())){
-                database.child(userListHashMap.get(user.getEmail()));
+            if(userListHashMap.containsKey(user)){
+                database.child(userListHashMap.get(user));
                 database.getRef().removeValue();
                 Log.d(CLASS_NAME, "removed value");
             }
@@ -177,7 +185,7 @@ public class MainActivity extends AppCompatActivity
 // Generate a new push ID for the new post
         final DatabaseReference newPostRef = database.push();
         newPostRef.setValue(user);
-        userListHashMap.put(user.getEmail(), newPostRef.getKey());
+        userListHashMap.put(user, newPostRef.getKey());
 
         newPostRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -186,7 +194,7 @@ public class MainActivity extends AppCompatActivity
                 User user = dataSnapshot.getValue(User.class);
 
                 Log.d(CLASS_NAME, "user email is " + user.getEmail());
-
+                saveUserList();
             }
 
             @Override
@@ -198,7 +206,17 @@ public class MainActivity extends AppCompatActivity
 //        database.child(user.getEmail()).setValue(user);
     }
 
-    private void readPost(User user){
+    private void saveUserList(){
+        try{
+            FileOutputStream fileOutputStream = openFileOutput("userList", MODE_PRIVATE);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            Log.d(CLASS_NAME, "size of object " + objectOutputStream.toString());
+            objectOutputStream.writeObject(userListHashMap);
+            objectOutputStream.flush();
+            objectOutputStream.close();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
 
@@ -254,14 +272,16 @@ public class MainActivity extends AppCompatActivity
 
         }
           else if (id == R.id.nav_profile) {
-            MyListings frag = new MyListings();
+            Intent i = new Intent(this, MyListings.class);
+            startActivity(i);
+//            MyListings frag = new MyListings();
+//
+//            FragmentManager fm = getFragmentManager();
+//            FragmentTransaction ft = fm.beginTransaction();
+//            ft.replace(R.id.content_main,frag).addToBackStack("");
+//            ft.commit();
 
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.content_main,frag).addToBackStack("");
-            ft.commit();
-
-            //manager.beginTransaction().replace(R.id.mylistings_fragment, frag, frag.getTag()).commit();
+//            manager.beginTransaction().replace(R.id.mylistings_fragment, frag, frag.getTag()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

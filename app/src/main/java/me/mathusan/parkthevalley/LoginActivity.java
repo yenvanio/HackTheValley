@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         mStatusTextView = (TextView) findViewById(R.id.status);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.web_api_key))
+                .requestIdToken("688003514168-jggps6isj7lenaa9oi9bgct6e1b255id.apps.googleusercontent.com")
                 .requestEmail()
                 .build();
 

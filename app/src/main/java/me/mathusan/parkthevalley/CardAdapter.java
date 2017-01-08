@@ -44,7 +44,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder> 
     }
 
 
-    public CardAdapter(Context mContext, List<User> albumList) {
+    public CardAdapter(Context mContext, List<User> userList) {
         this.mContext = mContext;
         this.userList = userList;
     }

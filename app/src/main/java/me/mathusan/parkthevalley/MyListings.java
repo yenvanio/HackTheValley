@@ -1,13 +1,19 @@
 package me.mathusan.parkthevalley;
 
+import android.app.Application;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -24,44 +30,52 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.GenericTypeIndicator;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Dan on 08/01/2017.
  */
 
-public class MyListings extends Fragment {
+public class MyListings extends AppCompatActivity {
 
     private static final String TAG = "Reading from FireBase";
     private RecyclerView recyclerView;
     private CardAdapter adapter;
-    private List<User> userList;
+    private HashMap<User, String> userList;
     private DatabaseReference database;
     final public static String FIREBASE_URL = "https://fir-parkthevalley.firebaseio.com/";
 
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+            recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-            View view = inflater.inflate(R.layout.mylistings_fragment, container, false);
+            userList = new HashMap<>();
 
-            recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+            userList = readUserList();
+            Set<User> keySet = userList.keySet();
 
-            userList = new ArrayList<>();
-            adapter = new CardAdapter(getActivity(), userList);
+            adapter = new CardAdapter(this, new ArrayList<>(keySet));
 
-            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
-            //RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 2);
+//            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+            RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
             recyclerView.setLayoutManager(mLayoutManager);
-            //recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
-            //recyclerView.setItemAnimator(new DefaultItemAnimator());
+            recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+            recyclerView.setItemAnimator(new DefaultItemAnimator());
             recyclerView.setAdapter(adapter);
 
             prepareCards();
-
-            return view;
         }
 
 
@@ -116,6 +130,22 @@ public class MyListings extends Fragment {
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+    }
+
+
+    private HashMap<User, String> readUserList(){
+        try{
+            FileInputStream fileInputStream = getBaseContext().openFileInput("userList");
+            ObjectInputStream objectInputStream = new ObjectInputStream( fileInputStream);
+            userList = (HashMap<User, String> ) objectInputStream.readObject();
+            objectInputStream.close();
+
+        }catch(IOException e){
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return userList;
     }
 
 

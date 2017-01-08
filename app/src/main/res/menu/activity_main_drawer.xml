@@ -5,18 +5,18 @@
 
         <item
             android:id="@+id/nav_maps"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_map_black_24dp"
             android:title="Maps" />
 
         <item
             android:id="@+id/nav_searchspots"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Search For parking Spots" />
+            android:icon="@drawable/ic_search_black_24dp"
+            android:title="Search Parking" />
 
         <item
             android:id="@+id/nav_addlisting"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Add Listing" />
+            android:icon="@drawable/ic_add_circle_black_24dp"
+            android:title="Add Parking" />
 
 
     </group>
@@ -25,12 +25,12 @@
         <menu>
             <item
                 android:id="@+id/nav_profile"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="About Me"/>
+                android:icon="@drawable/ic_account_circle_black_24dp"
+                android:title="My Parkings"/>
 
             <item
                 android:id="@+id/nav_signout"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_input_black_24dp"
                 android:title="Sign Out" />
 
         </menu>

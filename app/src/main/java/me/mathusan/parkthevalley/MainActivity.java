@@ -1,5 +1,8 @@
 package me.mathusan.parkthevalley;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -7,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -20,8 +24,11 @@ import android.widget.Toast;
 import com.firebase.client.Config;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -77,12 +84,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mGoogleAPIClient = new GoogleApiClient.Builder(getApplicationContext())
-                .addApi(LocationServices.API)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .build();
-
         createLocationRequest();
 
         Bundle b = getIntent().getExtras();
@@ -113,10 +114,7 @@ public class MainActivity extends AppCompatActivity
         // Write a message to the database
          database = FirebaseDatabase.getInstance().getReference();
 
-//        Spot spot = new Spot();
-//        spot.setLat(43.843295);
-//        spot.setLng(-79.27461);
-//        spot.setOpen(true);
+
         writeNewPost(user);
 
     }
@@ -132,69 +130,8 @@ public class MainActivity extends AppCompatActivity
 
         Firebase ref = new Firebase(FIREBASE_URL);
 
-
-// Generate a new push ID for the new post
-//        DatabaseReference newPostRef = database.child("user").push();
-
         database.child(user.getEmail()).setValue(user);
 
-
-
-
-
-
-
-//        String newPostKey = newPostRef.getKey();
-//// Create the data we want to update
-//        Map newPost = new HashMap();
-//
-//        newPost.put("email", "New Post");
-//        newPost.put("name", "Here is my new post!");
-//        newPost.put("phone", "Here is my new post!");
-//        newPost.put("price", 10.5);
-//        newPost.put("lat", spot.getLng());
-//        newPost.put("lng", spot.getLat());
-//        newPost.put("open",true);
-//
-//        Map updatedUserData = new HashMap();
-//        updatedUserData.put("User/Spots/Open" + newPostKey, true);
-//        updatedUserData.put("User/E mail" + newPostKey, "testemail");
-//// Do a deep-path update
-//        ref.updateChildren(updatedUserData, new Firebase.CompletionListener() {
-//            @Override
-//            public void onComplete(FirebaseError firebaseError, Firebase firebase) {
-//                if (firebaseError != null) {
-//                    System.out.println("Error updating data: " + firebaseError.getMessage());
-//                }
-//                else{Log.d(CLASS_NAME, "WriteNewPost Successful!");}
-//            }
-//        });
-
-//        String key = database.child("User").push().getKey();
-//
-//        Map<String, Object> childUpdates = new HashMap<>();
-//        HashMap<String, Object> postValues = new HashMap<>();
-//        HashMap<String, Object> postValues2 = new HashMap<>();
-//        postValues.put("Email" , email);
-//        postValues.put("Name" , name);
-//        postValues.put("Phone" , phone);
-//        postValues.put("Price" , price);
-//
-//        postValues2.put("LatLng", spot.getLatlng());
-//        postValues2.put("Open", spot.getOpen());
-//
-//        postValues.put("Spot", postValues2);
-//
-//        childUpdates.put("/User/" + key, postValues);
-
-//        childUpdates.put("/User-Name/" + key, name);
-//        childUpdates.put("/User-Email/" + key, email);
-//        childUpdates.put("/User-Phone/" + key, phone);
-//        childUpdates.put("/User-Price/" + key, price);
-//        childUpdates.put("/User-Spots-LatLng/" + key, spot.getLatlng());
-//        childUpdates.put("/User-Spots-Open/" + key, spot.getOpen());
-
-//        ref.setValue(childUpdates);
 
 
     }
@@ -240,13 +177,23 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_maps) {
 
         } else if (id == R.id.nav_addlisting) {
-            AddListingFragment addlisting = new AddListingFragment();
-            FragmentManager manager = getFragmentManager();
-            manager.beginTransaction().replace(R.id.adding_fragment, addlisting, addlisting.getTag());
+            //AddListingFragment addlisting = new AddListingFragment();
+            //FragmentManager manager = getFragmentManager();
+            //manager.beginTransaction().replace(R.id.adding_fragment, addlisting, addlisting.getTag());
         } else if (id == R.id.nav_searchspots) {
 
         } else if (id == R.id.nav_signout) {
 
+        }
+          else if (id == R.id.nav_profile) {
+            MyListings frag = new MyListings();
+
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.content_main,frag).addToBackStack("");
+            ft.commit();
+
+            //manager.beginTransaction().replace(R.id.mylistings_fragment, frag, frag.getTag()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

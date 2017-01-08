@@ -1,5 +1,6 @@
 package me.mathusan.parkthevalley;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -21,10 +22,16 @@ import com.firebase.client.Config;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -42,7 +49,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         OnMapReadyCallback,
         GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks,
-        LocationListener {
+        LocationListener
+{
 
 
     /**
@@ -240,10 +248,11 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_maps) {
 
         } else if (id == R.id.nav_addlisting) {
-            AddListingFragment addlisting = new AddListingFragment();
-            FragmentManager manager = getFragmentManager();
-            manager.beginTransaction().replace(R.id.adding_fragment, addlisting, addlisting.getTag());
+//            AddListingFragment addlisting = new AddListingFragment();
+//            FragmentManager manager = getFragmentManager();
+//            manager.beginTransaction().replace(R.id.adding_fragment, addlisting, addlisting.getTag());
         } else if (id == R.id.nav_searchspots) {
+            startPlacePicker();
 
         } else if (id == R.id.nav_signout) {
 
@@ -252,6 +261,36 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    int PLACE_PICKER_REQUEST = 1;
+    private void startPlacePicker(){
+
+        PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+
+        try {
+            startActivityForResult(builder.build(this), PLACE_PICKER_REQUEST);
+        } catch (GooglePlayServicesRepairableException e) {
+            e.printStackTrace();
+        } catch (GooglePlayServicesNotAvailableException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PLACE_PICKER_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                Place place = PlacePicker.getPlace(data, this);
+                String toastMsg = String.format("Place: %s", place.getName());
+                Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
+
+                changeCamera(CameraUpdateFactory.newLatLngZoom(place.getLatLng(), 14));
+            }
+        }
+    }
+
+    private void changeCamera(CameraUpdate cameraUpdate){
+        mMap.animateCamera(cameraUpdate);
     }
 
     @Override

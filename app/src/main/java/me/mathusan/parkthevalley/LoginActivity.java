@@ -111,8 +111,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             GoogleSignInAccount acct = result.getSignInAccount();
             mStatusTextView.setText(getString(R.string.signed_in_fmt, acct.getDisplayName()));
             Intent i = new Intent(this,MainActivity.class);
-            startActivity(i);
-
+            Bundle bundle = new Bundle();
+            bundle.putString("email",result.getSignInAccount().getEmail());
+            bundle.putString("name",result.getSignInAccount().getDisplayName());
+            i.putExtras(bundle);startActivity(i);
             //updateUI(true);
         } else {
             // Signed out, show unauthenticated UI.

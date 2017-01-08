@@ -1,5 +1,7 @@
 package me.mathusan.parkthevalley;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,23 +16,41 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.firebase.client.Config;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         OnMapReadyCallback,
         GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks,
-        LocationListener {
+        LocationListener
+{
 
 
     /**
@@ -41,12 +61,22 @@ public class MainActivity extends AppCompatActivity
     private UiSettings mUiSettings;
     private static String CLASS_NAME = "MAIN ACTIVITY";
 
+    String name, email;
+
     /**
      * Connection members
      */
     private GoogleApiClient mGoogleAPIClient;
     private LocationRequest locationRequest;
 
+    private DatabaseReference database;
+    final public static String FIREBASE_URL = "https://fir-parkthevalley.firebaseio.com/";
+
+    /**
+     * User member
+     */
+
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +93,15 @@ public class MainActivity extends AppCompatActivity
 
         createLocationRequest();
 
+        Bundle b = getIntent().getExtras();
+        name = b.getString("name");
+        email = b.getString("email");
+
+        user = new User();
+        user.setName(name);
+        user.setEmail(email);
+        user.setPhone("911");
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
@@ -75,6 +114,96 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        
+          mapFragment.getMapAsync(this);
+
+        // Write a message to the database
+         database = FirebaseDatabase.getInstance().getReference();
+
+//        Spot spot = new Spot();
+//        spot.setLat(43.843295);
+//        spot.setLng(-79.27461);
+//        spot.setOpen(true);
+        writeNewPost(user);
+
+    }
+
+    private void writeNewPost(User user)  {
+
+        Log.d(CLASS_NAME, "WritingPost...");
+
+        user.setEmail("testEmail");
+        user.setName("testName");
+
+        Firebase.setAndroidContext(this);
+
+        Firebase ref = new Firebase(FIREBASE_URL);
+
+
+// Generate a new push ID for the new post
+//        DatabaseReference newPostRef = database.child("user").push();
+
+        database.child(user.getEmail()).setValue(user);
+
+
+
+
+
+
+
+//        String newPostKey = newPostRef.getKey();
+//// Create the data we want to update
+//        Map newPost = new HashMap();
+//
+//        newPost.put("email", "New Post");
+//        newPost.put("name", "Here is my new post!");
+//        newPost.put("phone", "Here is my new post!");
+//        newPost.put("price", 10.5);
+//        newPost.put("lat", spot.getLng());
+//        newPost.put("lng", spot.getLat());
+//        newPost.put("open",true);
+//
+//        Map updatedUserData = new HashMap();
+//        updatedUserData.put("User/Spots/Open" + newPostKey, true);
+//        updatedUserData.put("User/E mail" + newPostKey, "testemail");
+//// Do a deep-path update
+//        ref.updateChildren(updatedUserData, new Firebase.CompletionListener() {
+//            @Override
+//            public void onComplete(FirebaseError firebaseError, Firebase firebase) {
+//                if (firebaseError != null) {
+//                    System.out.println("Error updating data: " + firebaseError.getMessage());
+//                }
+//                else{Log.d(CLASS_NAME, "WriteNewPost Successful!");}
+//            }
+//        });
+
+//        String key = database.child("User").push().getKey();
+//
+//        Map<String, Object> childUpdates = new HashMap<>();
+//        HashMap<String, Object> postValues = new HashMap<>();
+//        HashMap<String, Object> postValues2 = new HashMap<>();
+//        postValues.put("Email" , email);
+//        postValues.put("Name" , name);
+//        postValues.put("Phone" , phone);
+//        postValues.put("Price" , price);
+//
+//        postValues2.put("LatLng", spot.getLatlng());
+//        postValues2.put("Open", spot.getOpen());
+//
+//        postValues.put("Spot", postValues2);
+//
+//        childUpdates.put("/User/" + key, postValues);
+
+//        childUpdates.put("/User-Name/" + key, name);
+//        childUpdates.put("/User-Email/" + key, email);
+//        childUpdates.put("/User-Phone/" + key, phone);
+//        childUpdates.put("/User-Price/" + key, price);
+//        childUpdates.put("/User-Spots-LatLng/" + key, spot.getLatlng());
+//        childUpdates.put("/User-Spots-Open/" + key, spot.getOpen());
+
+//        ref.setValue(childUpdates);
+
 
     }
 
@@ -119,10 +248,11 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_maps) {
 
         } else if (id == R.id.nav_addlisting) {
-
-        } else if (id == R.id.nav_profile) {
-
+//            AddListingFragment addlisting = new AddListingFragment();
+//            FragmentManager manager = getFragmentManager();
+//            manager.beginTransaction().replace(R.id.adding_fragment, addlisting, addlisting.getTag());
         } else if (id == R.id.nav_searchspots) {
+            startPlacePicker();
 
         } else if (id == R.id.nav_signout) {
 
@@ -131,6 +261,36 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    int PLACE_PICKER_REQUEST = 1;
+    private void startPlacePicker(){
+
+        PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+
+        try {
+            startActivityForResult(builder.build(this), PLACE_PICKER_REQUEST);
+        } catch (GooglePlayServicesRepairableException e) {
+            e.printStackTrace();
+        } catch (GooglePlayServicesNotAvailableException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PLACE_PICKER_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                Place place = PlacePicker.getPlace(data, this);
+                String toastMsg = String.format("Place: %s", place.getName());
+                Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
+
+                changeCamera(CameraUpdateFactory.newLatLngZoom(place.getLatLng(), 14));
+            }
+        }
+    }
+
+    private void changeCamera(CameraUpdate cameraUpdate){
+        mMap.animateCamera(cameraUpdate);
     }
 
     @Override
@@ -233,6 +393,34 @@ public class MainActivity extends AppCompatActivity
             ActivityCompat.requestPermissions(MainActivity.this,
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
                     1);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 1: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+                    Toast.makeText(getApplicationContext(), "Permission Granted", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(getApplicationContext(), "Permission Denied", Toast.LENGTH_SHORT).show();
+
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
         }
     }
 

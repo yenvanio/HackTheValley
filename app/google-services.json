@@ -1,7 +1,9 @@
 {
   "project_info": {
     "project_number": "274134669153",
-    "project_id": "firebase-parkthevalley"
+    "firebase_url": "https://fir-parkthevalley.firebaseio.com",
+    "project_id": "firebase-parkthevalley",
+    "storage_bucket": "firebase-parkthevalley.appspot.com"
   },
   "client": [
     {
@@ -21,6 +23,10 @@
           }
         },
         {
+          "client_id": "274134669153-f12uidma6lsqclq0lqqtg0ti41gbmth2.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
           "client_id": "274134669153-l1ks3p2f0f9ht4lj76ah60uoruh968hg.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -35,11 +41,16 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "274134669153-f12uidma6lsqclq0lqqtg0ti41gbmth2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
-          "status": 1
+          "status": 2
         }
       }
     }

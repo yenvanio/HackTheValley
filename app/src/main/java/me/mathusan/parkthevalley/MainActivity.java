@@ -37,11 +37,18 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 
@@ -53,6 +60,11 @@ public class MainActivity extends AppCompatActivity
 {
 
 
+    enum STATE{
+        ADDING,
+        SEARCHING,
+        NORMAL // nothing
+}
     /**
      * Class members
     */
@@ -60,8 +72,10 @@ public class MainActivity extends AppCompatActivity
     private GoogleMap mMap;
     private UiSettings mUiSettings;
     private static String CLASS_NAME = "MAIN ACTIVITY";
+    private STATE state;
 
-    String name, email;
+    private String name, email;
+    private HashMap<String, String> userListHashMap;
 
     /**
      * Connection members
@@ -85,6 +99,9 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        state = STATE.NORMAL;
+        userListHashMap = new HashMap<>();
+
         mGoogleAPIClient = new GoogleApiClient.Builder(getApplicationContext())
                 .addApi(LocationServices.API)
                 .addConnectionCallbacks(this)
@@ -94,13 +111,15 @@ public class MainActivity extends AppCompatActivity
         createLocationRequest();
 
         Bundle b = getIntent().getExtras();
-        name = b.getString("name");
-        email = b.getString("email");
+        if(b != null){
+            name = b.getString("name");
+            email = b.getString("email");
 
-        user = new User();
-        user.setName(name);
-        user.setEmail(email);
-        user.setPhone("911");
+            user = new User();
+            user.setName(name);
+            user.setEmail(email);
+            user.setPhone("--- --- ----");
+        }
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -125,87 +144,57 @@ public class MainActivity extends AppCompatActivity
 //        spot.setLat(43.843295);
 //        spot.setLng(-79.27461);
 //        spot.setOpen(true);
-        writeNewPost(user);
+        //writeNewPost(user);
 
     }
 
-    private void writeNewPost(User user)  {
+    private void writeNewPost(final User user)  {
 
         Log.d(CLASS_NAME, "WritingPost...");
 
-        user.setEmail("testEmail");
-        user.setName("testName");
+//        user.setEmail("testEmail");
+//        user.setName("testName");
 
         Firebase.setAndroidContext(this);
 
-        Firebase ref = new Firebase(FIREBASE_URL);
+        Firebase firebase = new Firebase(FIREBASE_URL);
 
+        // remove existing databasereference
+        {
+            if(userListHashMap.containsKey(user.getEmail())){
+                database.child(userListHashMap.get(user.getEmail()));
+                database.getRef().removeValue();
+                Log.d(CLASS_NAME, "removed value");
+            }
+        }
 
 // Generate a new push ID for the new post
-//        DatabaseReference newPostRef = database.child("user").push();
+        final DatabaseReference newPostRef = database.push();
+        newPostRef.setValue(user);
+        userListHashMap.put(user.getEmail(), newPostRef.getKey());
 
-        database.child(user.getEmail()).setValue(user);
+        newPostRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.getValue() == null) return;
+                User user = dataSnapshot.getValue(User.class);
 
+                Log.d(CLASS_NAME, "user email is " + user.getEmail());
 
+            }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w(CLASS_NAME, "Failed to read value");
+            }
+        });
 
-
-
-
-//        String newPostKey = newPostRef.getKey();
-//// Create the data we want to update
-//        Map newPost = new HashMap();
-//
-//        newPost.put("email", "New Post");
-//        newPost.put("name", "Here is my new post!");
-//        newPost.put("phone", "Here is my new post!");
-//        newPost.put("price", 10.5);
-//        newPost.put("lat", spot.getLng());
-//        newPost.put("lng", spot.getLat());
-//        newPost.put("open",true);
-//
-//        Map updatedUserData = new HashMap();
-//        updatedUserData.put("User/Spots/Open" + newPostKey, true);
-//        updatedUserData.put("User/E mail" + newPostKey, "testemail");
-//// Do a deep-path update
-//        ref.updateChildren(updatedUserData, new Firebase.CompletionListener() {
-//            @Override
-//            public void onComplete(FirebaseError firebaseError, Firebase firebase) {
-//                if (firebaseError != null) {
-//                    System.out.println("Error updating data: " + firebaseError.getMessage());
-//                }
-//                else{Log.d(CLASS_NAME, "WriteNewPost Successful!");}
-//            }
-//        });
-
-//        String key = database.child("User").push().getKey();
-//
-//        Map<String, Object> childUpdates = new HashMap<>();
-//        HashMap<String, Object> postValues = new HashMap<>();
-//        HashMap<String, Object> postValues2 = new HashMap<>();
-//        postValues.put("Email" , email);
-//        postValues.put("Name" , name);
-//        postValues.put("Phone" , phone);
-//        postValues.put("Price" , price);
-//
-//        postValues2.put("LatLng", spot.getLatlng());
-//        postValues2.put("Open", spot.getOpen());
-//
-//        postValues.put("Spot", postValues2);
-//
-//        childUpdates.put("/User/" + key, postValues);
-
-//        childUpdates.put("/User-Name/" + key, name);
-//        childUpdates.put("/User-Email/" + key, email);
-//        childUpdates.put("/User-Phone/" + key, phone);
-//        childUpdates.put("/User-Price/" + key, price);
-//        childUpdates.put("/User-Spots-LatLng/" + key, spot.getLatlng());
-//        childUpdates.put("/User-Spots-Open/" + key, spot.getOpen());
-
-//        ref.setValue(childUpdates);
-
-
+//        database.child(user.getEmail()).setValue(user);
     }
+
+    private void readPost(User user){
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -248,10 +237,11 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_maps) {
 
         } else if (id == R.id.nav_addlisting) {
-//            AddListingFragment addlisting = new AddListingFragment();
-//            FragmentManager manager = getFragmentManager();
-//            manager.beginTransaction().replace(R.id.adding_fragment, addlisting, addlisting.getTag());
+            state = STATE.ADDING;
+
+            startPlacePicker();
         } else if (id == R.id.nav_searchspots) {
+            state = STATE.SEARCHING;
             startPlacePicker();
 
         } else if (id == R.id.nav_signout) {
@@ -285,6 +275,20 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
 
                 changeCamera(CameraUpdateFactory.newLatLngZoom(place.getLatLng(), 14));
+                if(state == STATE.ADDING){
+                    Spot spot = new Spot();
+                    spot.setOpen(true);
+                    spot.setLat(place.getLatLng().latitude);
+                    spot.setLng(place.getLatLng().longitude);
+
+                    List<Spot> tempCollection = user.getSpots() == null ? new ArrayList<Spot>() : user.getSpots();
+                    Log.d(CLASS_NAME, "Spot is null? : " + (spot == null));
+                    tempCollection.add(spot);
+                    Log.d(CLASS_NAME, "tempCollection is null? : " + (tempCollection.size() == 0));
+                    user.setSpots(tempCollection);
+
+                    writeNewPost(user);
+                }
             }
         }
     }

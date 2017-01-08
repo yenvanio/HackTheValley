@@ -1,6 +1,7 @@
 package me.mathusan.parkthevalley;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by Mathu on 2017-01-07.
@@ -12,7 +13,7 @@ public class User {
     private String name;
     private String phone;
     private double price;
-    private Collection<Spot> spots;
+    private List<Spot> spots;
 
 
     public User() {
@@ -44,11 +45,11 @@ public class User {
         this.price = price;
     }
 
-    public Collection<Spot> getSpots() {
+    public List<Spot> getSpots() {
         return spots;
     }
 
-    public void setSpots(Collection<Spot> spots) {
+    public void setSpots(List<Spot> spots) {
         this.spots = spots;
     }
 

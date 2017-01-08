@@ -101,7 +101,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder> 
                 database.getRef().setValue(u);
 
                 firebase.getRef().child("Open").setValue(!bool);
-                
+
 
             }
         });

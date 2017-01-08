@@ -20,6 +20,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.Config;
@@ -96,6 +98,8 @@ public class MainActivity extends AppCompatActivity
     private DatabaseReference database;
     final public static String FIREBASE_URL = "https://fir-parkthevalley.firebaseio.com/";
 
+    TextView nameH=null, emailH=null;
+
     /**
      * User member
      */
@@ -129,6 +133,7 @@ public class MainActivity extends AppCompatActivity
             user.setPhone("647-470-1413");
         }
 
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
@@ -142,6 +147,11 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        View nav_view = getLayoutInflater().inflate(R.layout.nav_header_main, null);
+        nameH = (TextView) nav_view.findViewById(R.id.navheader_name);
+        emailH = (TextView) nav_view.findViewById(R.id.navheader_email);
+        nameH.setText(user.getName());
+        emailH.setText(user.getEmail());
         
           mapFragment.getMapAsync(this);
 

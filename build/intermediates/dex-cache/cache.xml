@@ -3,16 +3,16 @@
 
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.0_bb2e264f3f90b226e0449895797b10b904179b99/classes.dex" />
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_571065ba487f87029f1612958b6c73c12873ab6a/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
@@ -21,21 +21,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.6.1/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="eccaaa9ffa6bb4bfbd2e870f01aaf69655d353be">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.6.1_ea14bce00c9303a468a3c72219f2efa7768d191e/classes.dex" />
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_149b3cf56e97550d95793b3aa5199d9edf60190e/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.6.1/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="a1c351dc10b92d638da57f3a6513f87cfbdc9f83">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.6.1_8542402845baa353499353a0a1058bf9eee88e12/classes.dex" />
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_eac1746c7582ae4b4990a05375b74e0747e9fe95/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -52,44 +52,44 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.0_877e2823f05eb84967a72dca3b7bf9fff0a6a43f/classes.dex" />
+        sha1="4a36600281a648769411ef642c331851732bf29e">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.6.1_16cc964e99b9d308d5e72041b9f2e46b286dd694/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.6.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_aa480c33b2bdf9a7fd4379b93023216a12fcbbc6/classes.dex" />
+        sha1="da3f763afd39da1c947d9442847c837e9182a09f">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-9.6.1_32e4fa3d664df151a004f5ec5b8892e238341215/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.6.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="aee64634871d88a419d59eb743c1258a60f19700">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_d29ecb3cb8d8741a3dd385707aca24e364620308/classes.dex" />
+        sha1="0efd1b44f47c134fb245914a1d54a55adbfc2f8d">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.6.1_3efbef475dce0e02184958c850029913d87a02cc/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_6400ae1e96dc4c08b97c512b92cf159c8b7d6cb5/classes.dex" />
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_e69a8f7e66cdee391f86411c49d4be6a92bb7e18/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_f1ac0f45674754220319dde1cd758a01688c2dc3/classes.dex" />
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_558b5cc07ec29a7015e441c799ea61a364ab9d3d/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -106,8 +106,8 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="465f40f840e583f8b7421a3aacf3fbf08c28f00a">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-9.6.1_fd5855a0e021c461b59bbc958ea1601680ef17b1/classes.dex" />
+        sha1="ac8365c87591065db07f7bac8551504504832cd4">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.6.1_1b391566c0600250ccbae0d2a94f2a8b1c877bbf/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -124,107 +124,107 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="0efd1b44f47c134fb245914a1d54a55adbfc2f8d">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.6.1_ed73436d67cdf1d25086ab539e8c32e5e9c22100/classes.dex" />
+        sha1="79f521967ad7f49b34748db89df02852c2b2f87b">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-9.6.1_b56221667f4431c7e790b41e8821ad84505a66ae/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.6.1/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="da3f763afd39da1c947d9442847c837e9182a09f">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-9.6.1_8989b39d261253f4d56e2ece873dae540efb07ea/classes.dex" />
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.0_561b4eceb202dcfef3fb7ed8f57a499a5cd9490a/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.6.1/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.6.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="af7582c6b327449c6d32518e6a10307860b7b5d6">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.6.1_1f88e428cb32ad93738265ae1191e2d9b4b17d4b/classes.dex" />
+        sha1="465f40f840e583f8b7421a3aacf3fbf08c28f00a">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-9.6.1_d74d3da2abe72124b06ff4a51fba1725e0b3136a/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_91145380407f25463f84276f0ef23d75a1c17ba6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.6.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="62ff84124b89177abc0c27f3e38c9732f2d41617">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.6.1_223d336b1ec636d981620b569ccdb4893d3f170c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_1617a71e29abaee4be74cc4d46456302f792bcea/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.6.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ac8365c87591065db07f7bac8551504504832cd4">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.6.1_78b77a993ddac59d6b818928b6e071484b2926d2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.6.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="4a36600281a648769411ef642c331851732bf29e">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.6.1_071f056f707f79913b12d97157ffc20d311ec048/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_7c0135b37a009159c9a74e2da78d0a0059845f58/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.0_bf32c0d2b3a8abd9166b6db760145d340882ef05/classes.dex" />
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.0_57e2c7910db5b4b0edec10f7c962ac9e559ca5b1/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.6.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_3e8060101dd6b3a56e2cff2965ea7d96355c298b/classes.dex" />
+        sha1="62ff84124b89177abc0c27f3e38c9732f2d41617">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.6.1_268b9b8c7f5ec8236461615b36e334733442febb/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.6.1/jars/classes.jar"
+        jar="/Users/salmansharif/Documents/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_5971ab316dca57f9d8dda04bd8701c2cc05b7ee7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1f2b2e754e4a34981fcf9216bdcc07529b0afa2a">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_4b437fe011be58dd97df35e1d2ba5b6e74d84c7e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1e14ebe1cda8491f152083e752ca5bf73cd37bff">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.6.1_a0a0348f16a45a3d857f9d63253e67fd5e17b677/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.6.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="b75ecdd04a37d31b4a0da2729fc5c558962a529b">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.6.1_52b10934586597755b48b5efe9b6f5dc364bf1d9/classes.dex" />
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.6.1_7da6a1baf6eaef2aff8712d53057151ea9f2f642/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.0_0a542d901b907fc9f82f37a08ca807dfc2823ca1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="eccaaa9ffa6bb4bfbd2e870f01aaf69655d353be">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.6.1_49ae182efca2a83ca9cc1409d334367a62c629f3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_385dcdb0f9d68cf3502318a9ad70346ed4f816db/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -242,16 +242,16 @@
         optimize="true"
         revision="25.0.0"
         sha1="1ef72e72bc0d05602c366582afa9439f58bb31d6">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.6.1_241447aca77253753dbabda7923ad4b970fdc0c6/classes.dex" />
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.6.1_39f6d5a9ad303581bab5fe27c9c2099f016f6157/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.6.1/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="1e14ebe1cda8491f152083e752ca5bf73cd37bff">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.6.1_caaec4a5488caf5cd2bcef59b8799f8783a6b7ae/classes.dex" />
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_bfffbed0e925e0b9c8dca9bc9d496917e7890c39/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -273,30 +273,30 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.6.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_2b2baec53decbb93913033d634d4c2a4563e6ea2/classes.dex" />
+        sha1="a1c351dc10b92d638da57f3a6513f87cfbdc9f83">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.6.1_21f33db7486a6932f8dbdaf90a6801ba4a03015c/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.6.1/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="79f521967ad7f49b34748db89df02852c2b2f87b">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-9.6.1_511fb2fe47a0c65bcee990bdcc6a22ec23b4f169/classes.dex" />
+        sha1="642a74c023649ec8e61e6623fd35c7758004b281">
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b23e7082db288418a67221d6ef4ef032ffe2dc4d/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
+        jar="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_a3a7f5f77125b848f35e90bcb750b86ea821a3dc/classes.dex" />
+        <dex dex="/Volumes/Tardis/Desktop/HackTheValley/HackTheValley.git/trunk/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_44b5aff80be2ee6ce58e1ec898623007aabe6a95/classes.dex" />
     </item>
     <item
         is-multidex="true"

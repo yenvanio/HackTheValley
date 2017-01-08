@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="84437f8d5a06a02b3be90fff4446b1015fcf3afe">
+        sha1="be50d89a2f6e93193bfd6787b3ad1ca548f05a4f">
         <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_66fe18f9c3389a000ff2c2ecf3a9125f8b82537c/classes.dex" />
     </item>
     <item
@@ -36,6 +36,15 @@
         revision="25.0.0"
         sha1="a1c351dc10b92d638da57f3a6513f87cfbdc9f83">
         <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.6.1_8542402845baa353499353a0a1058bf9eee88e12/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mathu/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-android/2.5.0/7d0473896b3b10b23a2f9812fec4316dff8afdd/firebase-client-android-2.5.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07d0473896b3b10b23a2f9812fec4316dff8afdd">
+        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/firebase-client-android-2.5.0_8d42f60c6f55be2777fda04787cbb84f81c01432/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -84,12 +93,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/Mathu/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.2.2/3c8f6018eaa72d43b261181e801e6f8676c16ef6/jackson-databind-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3c8f6018eaa72d43b261181e801e6f8676c16ef6">
+        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-databind-2.2.2_606e05fcdc274821a674e522721d7154fc98731a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.6.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="465f40f840e583f8b7421a3aacf3fbf08c28f00a">
         <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-9.6.1_fd5855a0e021c461b59bbc958ea1601680ef17b1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mathu/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.2.2/285cb9c666f0f0f3dd8a1be04e1f457eb7b15113/jackson-annotations-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="285cb9c666f0f0f3dd8a1be04e1f457eb7b15113">
+        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-annotations-2.2.2_5e803a0b311db49094afef14df2bbe3b8e9da058/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -201,6 +228,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/Mathu/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-jvm/2.5.0/c0af904657634f7ab9cc21e75d80250570033321/firebase-client-jvm-2.5.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c0af904657634f7ab9cc21e75d80250570033321">
+        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/firebase-client-jvm-2.5.0_a91944b16edfa9db54860525f828536d0c11321f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.6.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -219,11 +255,20 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/Mathu/.gradle/caches/modules-2/files-2.1/com.firebase/tubesock/0.0.12/6ec0bbd3e161a73ed672284b587fd32309a86d7a/tubesock-0.0.12.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6ec0bbd3e161a73ed672284b587fd32309a86d7a">
+        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/tubesock-0.0.12_19a3595d05120c7dec7689bf689de276157b8d5b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="7ae3f10d0e44f601a203b36616813edb4c0df413">
+        sha1="62c833a7cd309a5f07e61a63cc934665dd5d34d5">
         <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_507088f89abb3d0f310f15822f3137672cc7b3cd/classes.dex" />
     </item>
     <item
@@ -252,6 +297,15 @@
         revision="25.0.0"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
         <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_a3a7f5f77125b848f35e90bcb750b86ea821a3dc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Mathu/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.2/d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b/jackson-core-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b">
+        <dex dex="/Users/Mathu/Documents/AppDevelopment/HackTheValley/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-core-2.2.2_d3e1f4507bf82511a0a783bf9a12d438ab1b3053/classes.dex" />
     </item>
 
 </items>

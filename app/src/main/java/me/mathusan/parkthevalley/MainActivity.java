@@ -240,9 +240,9 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_maps) {
 
         } else if (id == R.id.nav_addlisting) {
-
-        } else if (id == R.id.nav_profile) {
-
+            AddListingFragment addlisting = new AddListingFragment();
+            FragmentManager manager = getFragmentManager();
+            manager.beginTransaction().replace(R.id.adding_fragment, addlisting, addlisting.getTag());
         } else if (id == R.id.nav_searchspots) {
 
         } else if (id == R.id.nav_signout) {

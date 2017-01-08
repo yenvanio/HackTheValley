@@ -1,11 +1,8 @@
 package me.mathusan.parkthevalley;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -14,7 +11,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -25,20 +21,16 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -120,6 +112,8 @@ public class MainActivity extends AppCompatActivity
 
     private User user;
 
+    private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,8 +121,16 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         state = STATE.NORMAL;
         userListHashMap = new HashMap<>();
+        button = (Button) findViewById(R.id.refreshMapButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                writeNewPost(null);
+            }
+        });
 
         mGoogleAPIClient = new GoogleApiClient.Builder(getApplicationContext())
                 .addApi(LocationServices.API)
@@ -177,12 +179,6 @@ public class MainActivity extends AppCompatActivity
         // Write a message to the database
         database = FirebaseDatabase.getInstance().getReference();
 
-//        Spot spot = new Spot();
-//        spot.setLat(43.843295);
-//        spot.setLng(-79.27461);
-//        spot.setOpen(true);
-        //writeNewPost(user);
-
     }
 
     public Activity getInstance() {return this;}
@@ -222,12 +218,9 @@ public class MainActivity extends AppCompatActivity
         builder.show();
     }
 
-    private void writeNewPost(final User user) {
+    private void writeNewPost(@Nullable final User user) {
 
         Log.d(CLASS_NAME, "WritingPost...");
-
-//        user.setEmail("testEmail");
-//        user.setName("testName");
 
         Firebase.setAndroidContext(this);
 
@@ -235,10 +228,11 @@ public class MainActivity extends AppCompatActivity
 
         // remove existing databasereference
         {
-            if(userListHashMap.containsKey(user)){
+            if(userListHashMap.containsKey(user.getEmail())){
                 database.child(userListHashMap.get(user));
-                database.getRef().removeValue();
+                database.getRef().setValue(user);
                 userListHashMap.remove(user);
+
 
 
                 Log.d(CLASS_NAME, "removed value");
@@ -274,7 +268,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-//        database.child(user.getEmail()).setValue(user);
     }
 
     private void saveUserList(){
@@ -297,6 +290,7 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
+            super.onBackPressed();
             super.onBackPressed();
         }
     }
@@ -476,16 +470,6 @@ public class MainActivity extends AppCompatActivity
         lastKnownLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleAPIClient);
     }
 
-    private void connectGoogleAPI(){
-        if(!mGoogleAPIClient.isConnected()){
-            mGoogleAPIClient.connect();
-        }
-    }
-
-    private void disconnectGoogleAPI(){
-        mGoogleAPIClient.disconnect();
-    }
-
     private void startLocationUpdates() {
         try{
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleAPIClient, locationRequest, this);
@@ -510,21 +494,7 @@ public class MainActivity extends AppCompatActivity
     public void onLocationChanged(Location location) {
         Log.d(CLASS_NAME, "location Changed " + location.toString());
     }
-/*
-    @Override
-    public void onStatusChanged(String s, int i, Bundle bundle) {
 
-    }
-
-    @Override
-    public void onProviderEnabled(String s) {
-
-    }
-
-    @Override
-    public void onProviderDisabled(String s) {
-
-    }*/
 
     private void askForPermission(){
         // if (ContextCompat.checkSelfPermission(this, Manifest.permission.))
@@ -557,7 +527,7 @@ public class MainActivity extends AppCompatActivity
 
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
-                    Toast.makeText(getApplicationContext(), "Permission Denied", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), "Permission Denied", Toast.LENGTH_SHORT).show();
 
                 }
                 return;

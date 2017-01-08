@@ -1,12 +1,8 @@
 package me.mathusan.parkthevalley;
 
 import android.os.Parcel;
-import android.os.Parcelable;
-
-import com.google.android.gms.maps.model.LatLng;
 
 import java.io.Serializable;
-import java.util.Calendar;
 
 /**
  * Created by Mathu on 2017-01-07.
